@@ -31,6 +31,7 @@ N = int(input())
 
 graph = [[] for _ in range(N + 1)]
 time = [0] * (N + 1)
+result = [0] * (N + 1)
 indegree = [0] * (N + 1)
 
 for i in range(1, N+1):
@@ -49,16 +50,17 @@ for i in range(1, N+1):
 def topology_sort():
     for i in range(1, N+1):
         if indegree[i] == 0:
-            q.append((i, 0))
+            result[i] = time[i]
+            q.append(i)
     while q:
         now = q.popleft()
-        time[now[0]] += now[1]
-        for i in graph[now[0]]:
+        for i in graph[now]:
             indegree[i] -= 1
+            result[i] = max(result[i], result[now] + time[i])
             if indegree[i] == 0:
-                q.append((i, time[now[0]]))
+                q.append(i)
     for i in range(1, N+1):
-        print(time[i])
+        print(result[i])
 
 topology_sort()
 

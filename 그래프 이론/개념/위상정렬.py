@@ -1,7 +1,6 @@
-
-
 """
-point: 왜 여기서는 간선정보를 2차원 리스트로 저장할까.
+point: 왜 여기서는 간선정보를 2차원 리스트로 저장할까. --> popleft()로 뽑아온 원소에 연결된 정보들을 순회해야하기 때문.
+
 input: 첫줄은 노드와 간선의 개수
 7 8
 1 2
@@ -12,6 +11,8 @@ input: 첫줄은 노드와 간선의 개수
 4 7
 5 6
 6 4
+
+deque: 생성 - q = deque(), 삽입 - append, 추출- q.popleft()
 """
 
 from collections import deque
@@ -28,11 +29,9 @@ for _ in range(1, v + 1):
 def topology_sort():
 	result = []
 	q = deque()
-
-	for i in range(1, n + 1):
+	for i in range(1, n+1):
 		if indegree[i] == 0:
 			q.append(i)
-
 	while q:
 		now = q.popleft()
 		result.append(now)
@@ -43,7 +42,8 @@ def topology_sort():
 
 	for i in result:
 		print(i, end=' ')
-	print()
 
 topology_sort()
+
+
 	 

@@ -4,6 +4,18 @@ https://www.acmicpc.net/problem/18405
 
 point
 priority queue 와 queue의 콜라보레이션 ~~ psy ~~
+
+- queue
+from collections import deque
+q = deque()
+q.append
+q.popleft()
+
+- priority queue
+import heapq
+pq = []
+heapq.heappush(pq, data)
+heapq.heappop()
 """
 
 import heapq

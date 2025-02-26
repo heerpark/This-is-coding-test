@@ -3,8 +3,8 @@ input
 https://www.acmicpc.net/problem/18405
 
 point
-priority queue 와 queue의 콜라보레이션 ~~ psy ~~
-
+1번 풀이: priority queue 와 queue의 콜라보레이션 ~~ psy ~~
+2번 풀이: 굳이 pq? 그냥 처음에 낮은 순서대로 넣으면 큐에서 그 순서가 계속 유지되면서 돌게 됨.
 - queue
 from collections import deque
 q = deque()
@@ -17,6 +17,10 @@ pq = []
 heapq.heappush(pq, data)
 heapq.heappop()
 """
+
+import heapq
+
+
 
 import heapq
 import sys

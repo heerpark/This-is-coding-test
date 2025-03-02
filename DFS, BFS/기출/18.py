@@ -1,5 +1,6 @@
 """
 point
+작은 문제의 정답들이 큰 문제를 이루게 되는 경우에도 DFS 적용이 가능함을 익히자.
 
 stack concept을 통한 올바른 괄호 체크
 슬라이싱에서는 enumerate보다 index로 for문 돌리기
